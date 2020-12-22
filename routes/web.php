@@ -14,9 +14,12 @@ use Illuminate\Support\Facades\Auth;
 */
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\FuncionariosController;
   
 Route::resource('products', ProductController::class)->middleware('auth');
 Auth::routes();
+
+Route::resource('funcionarios', FuncionariosController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
