@@ -25,17 +25,17 @@
             <th>CPF</th>
             <th width="280px">Action</th>
         </tr>
-        @foreach ($funcionarios as $funcionarios)
+        @foreach ($funcionarios as $funcionario)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $funcionarios->name }}</td>
-            <td>{{ $funcionarios->detail }}</td>
+            <td>{{ $funcionario->name }}</td>
+            <td>{{ $funcionario->cpf }}</td>
             <td>
-                <form action="{{ route('funcionarios.destroy',$funcionarios->id) }}" method="POST">
+                <form action="{{ route('funcionarios.destroy',$funcionario->id) }}" method="POST">
    
-                    <a class="btn btn-info" href="{{ route('funcionarios.show',$funcionarios->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('funcionarios.show',$funcionario->id) }}">Show</a>
     
-                    <a class="btn btn-primary" href="{{ route('funcionarios.edit',$funcionarios->id) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('funcionarios.edit',$funcionario->id) }}">Edit</a>
    
                     @csrf
                     @method('DELETE')

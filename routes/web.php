@@ -16,14 +16,14 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FuncionariosController;
   
-Route::resource('products', ProductController::class)->middleware('auth');
-Auth::routes();
-
-Route::resource('funcionarios', FuncionariosController::class);
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/sair',function(){
-    Auth::logout();
-    return redirect()->route("home");
+Route::group(['middleware' => 'web'], function(){
+    Auth::routes();
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 });
+
+Route::resource('funcionarios', FuncionariosController::class)->middleware('auth');
+
+Route::resource('products', ProductController::class)->middleware('auth');
+
+Route::get('/home', [App\Http\Controllers\ProductController::class, 'index'])->name('/');
+
