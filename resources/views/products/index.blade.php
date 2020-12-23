@@ -4,7 +4,7 @@
     <div class="row" style="margin-top:30px">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Todo List</h2>
+                <h2>Produtos</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('products.create') }}">Criar Novo Produto</a>
