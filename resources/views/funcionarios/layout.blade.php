@@ -54,10 +54,10 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="/products">Produtos</a>
+                                <a class="nav-link" href=" {{url('/produtos')}};">Produtos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/funcionarios">Clientes</a>
+                                <a class="nav-link" href=" {{url('/funcionarios')}};">Funcioanrios</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
